@@ -116,7 +116,9 @@ pre code {
   border-radius: 100%;
   display: none;
 }
-
+.gallery {
+  display: flex;
+}
 .description {
   display: block;
   width: 90%;
