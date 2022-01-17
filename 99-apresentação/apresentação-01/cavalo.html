@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Greensock Course</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="opaco">
+
+    <svg class="cavalo" width="500" height="304" viewBox="0 0 500 304" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="cavalo">
+            <path id="Vector" d="M0 122.762L19.0871 16.4394L58.3877 45.248L0 122.762Z" fill="#822B1D" />
+            <path id="Vector_2" d="M58.3877 45.248L0 122.762L18.9488 129.026L58.3877 45.248Z" fill="#B65145" />
+            <path id="Vector_3" d="M58.3877 45.248L18.9488 129.026L77.1389 59.0002L58.3877 45.248Z" fill="#E37066" />
+            <path id="Vector_4" d="M7.76527 8.14069L77.1389 59.0002L62.2604 11.8751L7.76527 8.14069Z" fill="#B65145" />
+            <path id="Vector_5" d="M77.1389 59.0002L62.2604 11.8751L112.33 15.2144L145.09 174.333L77.1389 59.0002Z" fill="#E37066" />
+            <path id="Vector_6" d="M145.09 174.333L112.33 15.2144L174.709 48.9034L145.09 174.333Z" fill="#F89E9C" />
+            <path id="Vector_7" d="M314.799 48.9034H174.709L322.17 158.269L314.799 48.9034Z" fill="#822B1D" />
+            <path id="Vector_8" d="M322.17 158.269L174.709 48.9034L145.09 174.333L197.985 195.179L322.17 158.269Z" fill="#E37066" />
+            <path id="Vector_9" d="M322.17 158.269L314.799 48.9034L371.587 34.4201L416.775 102.371L322.17 158.269Z" fill="#F89E9C" />
+            <path id="Vector_10" d="M322.17 158.269L416.775 102.371L377.692 219.7L322.17 158.269Z" fill="#822B1D" />
+            <path id="Vector_11" d="M377.692 219.7L396.503 163.723L405.216 219.7H377.692Z" fill="#E37066" />
+            <path id="Vector_12" d="M405.216 219.7H377.692V278.008L405.216 219.7Z" fill="#F89E9C" />
+            <path id="Vector_13" d="M365.817 303.537L396.522 238.174V303.537H365.817Z" fill="#822B1D" />
+            <path id="Vector_14" d="M124.185 219.7L145.09 174.333L159.632 180.063L151.709 219.7H124.185Z" fill="#822B1D" />
+            <path id="Vector_15" d="M151.709 219.7H124.185V278.008L151.709 219.7Z" fill="#E37066" />
+            <path id="Vector_16" d="M112.33 303.537L143.035 238.174V303.537H112.33Z" fill="#822B1D" />
+            <path id="Vector_17" d="M92.6497 167.418L65.1255 149.121V209.82L92.6497 167.418Z" fill="#E37066" />
+            <path id="Vector_18" d="M65.1255 149.121L92.6497 167.418H124.185L65.1255 149.121Z" fill="#822B1D" />
+            <path id="Vector_19" d="M65.1255 149.121L65.4416 149.22L124.185 167.418V147.797L117.091 138.787L65.1255 149.121Z" fill="#F89E9C" />
+            <path id="Vector_20" d="M53.2504 228.196L83.9557 180.636V212.33L53.2504 228.196Z" fill="#822B1D" />
+            <path id="Vector_21" d="M77.1389 59.0002L145.09 174.333L65.4021 73.1278L77.1389 59.0002Z" fill="#822B1D" />
+            <path id="Vector_22" d="M21.6953 9.14839L112.33 15.2144L90.4959 3.43806L45.6234 0L21.6953 9.14839Z" fill="#822B1D" />
+            <path id="Vector_23" d="M145.09 174.333L124.185 147.797V219.7L145.09 174.333Z" fill="#F89E9C" />
+            <path id="Vector_24" d="M405.216 84.9832L460.739 167.398V84.9832H405.216Z" fill="#E37066" />
+            <path id="Vector_25" d="M460.739 97.7475V223.177L500 160.462L460.739 97.7475Z" fill="#822B1D" />
+            <path id="Vector_26" d="M174.709 48.9034L90.4959 3.43805L122.031 7.15273L194.388 48.9034H174.709Z" fill="#531915" />
+        </g>
+    </svg>
+
+    <div class="box">
+        <div class="restart btns">restart</div>
+        <div class="play btns">play</div>
+        <div class="pause btns">pause</div>
+        <div class="fast btns">fast</div>
+        <div class="normal btns">normal</div>
+
+    </div>
+
+    <a href="apresentação.html" target="_blank" class="voltar">
+        voltar
+    </a>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        const cavalo = document.querySelectorAll('#cavalo>path')
+        const tl = new gsap.timeline();
+        const restart = document.querySelector('.restart');
+        const play = document.querySelector('.play');
+        const pause = document.querySelector('.pause');
+        const fast = document.querySelector('.fast');
+        const normal = document.querySelector('.normal');
+
+
+        tl.from(cavalo, {
+            duration: 2,
+            scale: 0,
+            opacity: 0,
+            transformOrigin: 'center center',
+            ease: Elastic.easeInOut,
+            repeat: -1,
+            repeatDelay: .3,
+            yoyo: true,
+            stagger: .8
+        })
+
+        play.addEventListener('click', function () {
+            tl.play();
+        });
+        restart.addEventListener('click', function () {
+            tl.restart();
+        })
+        pause.addEventListener('click', function () {
+            tl.pause();
+        })
+        fast.addEventListener('click', function () {
+            tl.timeScale(10)
+            tl.play();
+        })
+        normal.addEventListener('click', function () {
+            tl.timeScale(1)
+            tl.play();
+        })
+        let el = document.querySelector('body')
+        document.addEventListener('readystatechange', function (event) {
+            console.log(event.target.readyState); // check for more states
+            if (event.target.readyState === "complete") {
+                el.classList.remove('opaco');
+            }
+        });
+    </script>
+</body>
+
+</html>

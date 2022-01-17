@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(90, 128, 216);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+svg {
+  width: 100%;
+  padding: 10%;
+}
+.box {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.resume,
+.play,
+.pause {
+  cursor: pointer;
+  padding: 1rem;
+  background: #fff;
+  font-family: monospace;
+  text-transform: uppercase;
+  border: 3px solid;
+}
+.resume:hover,
+.play:hover,
+.pause:hover {
+  background: rgb(90, 128, 216);
+  color: #fff;
+}
